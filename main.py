@@ -8,6 +8,9 @@ import random
 from art import logo
 import os
 
+def return_score(player):
+    return sum(player)
+
 def blackjack():
     os.system('cls')
 
@@ -32,7 +35,8 @@ def blackjack():
         player_cards.append(cards[random.randint(0,12)])
         print(f"These are your cards {str(player_cards)}")
         print("This is the dealers card " + str(dealer_cards[0]))
-        if sum(player_cards) > 21:
+        
+        if return_score(player_cards) > 21:
             print(f"You have {sum(player_cards)} You busted :(. L RIP BOZO")
             busted = True
             break
